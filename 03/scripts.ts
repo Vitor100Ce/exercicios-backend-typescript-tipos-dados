@@ -1,21 +1,29 @@
 
 
 
-const geraTabuada = (numeros: number[]) => {
+const geraTabuada = (numeros: number[]) : string => {
+
+    let resultado: string = '';
 
    for(let i = 0; i < numeros.length; i++) {
 
         for(let j = 0; j < 11; j++){
 
-            console.log(`${numeros[i]} x ${j} = ${numeros[i] * j}` )
+            resultado += `${numeros[i]} x ${j} = ${numeros[i] * j} \n`
+
+            if(j === 10){
+                resultado += '--------------------------- \n'
+            }
+
 
         }
 
-        console.log('--------------------------')
 
    }
+
+   return resultado
 
 }
 
 
-geraTabuada([1, 2, 9])
+console.log(geraTabuada([1, 2, 9]))
